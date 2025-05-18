@@ -156,7 +156,7 @@ const {
   if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTOLIKESTATUS === "true") {
     const user = await conn.decodeJid(conn.user.id);
     await conn.sendMessage(mek.key.remoteJid,
-    { react: { key: mek.key, text: '💚' } },
+    { react: { key: mek.key, text: '🐷,🙃,😉' } },
     { statusJidList: [mek.key.participant, user] }
     )};
     await Promise.all([
