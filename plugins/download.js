@@ -4,7 +4,7 @@ const {
 } = require("../lib/functions");
 const {
   downloadTiktok
-} = require('@mrnima/tiktok-downloader');
+} = require('https://dtz-api-new.vercel.app/download/tiktokdl?url=');
 const {
   facebook
 } = require("@mrnima/facebook-downloader");
