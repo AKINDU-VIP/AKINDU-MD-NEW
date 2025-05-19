@@ -104,42 +104,107 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
 
 
 cmd({
-    pattern: "tt",
-    alias: ["ttdl", "tk", "tiktokdl", "tiktok"],
-    desc: "Download TikTok video without watermark",
-    category: "downloader",
-    react: "⬆️",
-    filename: __filename
-},
-async (conn, mek, m, { from, args, q, reply }) => {
-    try {
-        if (!q) return reply("Please provide a TikTok video link.");
-        if (!q.includes("tiktok.com")) return reply("Invalid TikTok link.");
-        
-        reply("*Tik Tok Download*");
-        
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/tiktok?url=${q}`;
-        const { data } = await axios.get(apiUrl);
-        
-        if (!data.status || !data.data) return reply("Failed to fetch TikTok video.");
-        
-        const { title, like, comment, share, author, meta } = data.data;
-        const videoUrl = meta.media.find(v => v.type === "video").org;
-        
-        const caption = `🎵 *Tik Tok Download* 🎵\n\n` +
-                        `👤 *USER:* ${author.nickname} (@${author.username})\n` +
-                        `📖 *TITLE:* ${title}\n` +
-                        `👍 *LIKES:* ${like}\n💬 *COMMENTS:* ${comment}\n🔁 *SHARES:* ${share}\n\n *AKINDU-MD*`;
-        
-        await conn.sendMessage(from, {
-            video: { url: videoUrl },
-            caption: caption,
-            contextInfo: { mentionedJid: [m.sender] }
-        }, { quoted: mek });
-        
-    } catch (e) {
-        console.error("Error in TikTok downloader command:", e);
-        reply(`An error occurred: ${e.message}`);
+  pattern: "tiktok",
+  alias: ['tt3', 'ttdown3'],
+  react: "🎥",
+  desc: "Download TikTok Videos",
+  category: "download",
+  filename: __filename
+}, async (bot, message, args, { from, quoted, reply, q }) => {
+  try {
+    if (!q) return await reply("*`Please provide a TikTok URL.`*");
+    
+    if (!q.includes('tiktok.com')) return await reply("This URL is invalid.");
+
+    const apiUrl = `https://dark-shan-yt.koyeb.app/download/tiktok?url=${encodeURIComponent(q)}`;
+    const apiResponse = await fetchJson(apiUrl);
+
+    if (!apiResponse.status || !apiResponse.data) {
+      return await reply("❌ Could not fetch video details.");
     }
-});
+
+    const videoData = apiResponse.data;
+    const videoOptions = videoData.data;
+
+    const downloadMessage = `
+┏━┫ *⚬Lααɾα-ᴍᴅ-ᴛɪᴋᴛᴏᴋ⚬* ┣━✾
+┃            *ᴸ  ͣ  ͣ  ͬ  ͣ  ✻  ᴸ  ͣ  ͣ  ͬ  ͣ*
+┻
+> *Title:* ${videoData.title}
+> *Author:* ${videoData.author.fullname}
+> *Duration:* ${videoData.duration}
+> *Views:* ${videoData.stats.views}
+      
+*🔢 ʀᴇᴘʟʏ ʙᴇʟᴏᴡ ᴛʜᴇ ɴᴜᴍʙᴇʀ*
+
+*1.1 | No Watermark - SD*
+*1.2 | No Watermark - HD*
+*1.3 | Watermarked*
+*1.4 | AUDIO*
+
+> Lααɾα-ᴍᴅ ✻`;
+
+    const sentMessage = await conn.sendMessage(from, {
+      image: { url: videoData.cover || '' },
+      caption: downloadMessage,
+      contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                }           
+            }
+     }, {quoted: mek});
+
+    bot.ev.on("messages.upsert", async (msgUpdate) => {
+      const receivedMessage = msgUpdate.messages[0];
+
+      if (!receivedMessage.message || !receivedMessage.message.extendedTextMessage) return;
+
+      const userResponse = receivedMessage.message.extendedTextMessage.text.trim();
+
+      if (receivedMessage.message.extendedTextMessage.contextInfo &&
+          receivedMessage.message.extendedTextMessage.contextInfo.stanzaId === sentMessage.key.id) {
+        
+        let downloadUrl;
+        let captionText = "© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·*";
+
+        switch (userResponse) {
+          case '1.1':
+            downloadUrl = videoOptions.find(v => v.type === "nowatermark")?.url;
+            break;
+          case '1.2':
+            downloadUrl = videoOptions.find(v => v.type === "nowatermark_hd")?.url;
+            break;
+          case '1.3':
+            downloadUrl = videoOptions.find(v => v.type === "watermark")?.url;
+            break;
+          case '1.4':
+            downloadUrl = videoData.music_info.url;
+            captionText = "© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·*";
+            break;
+          default:
+            return await conn.sendMessage(from, { text: "❌ Invalid option. Try again." }, { quoted: receivedMessage });
+        }
+
+        if (downloadUrl) {
+          const mediaType = userResponse === '4' ? "audio/mpeg" : "video/mp4";
+          await bot.sendMessage(from, {
+            [userResponse === '4' ? "audio" : "video"]: { url: downloadUrl },
+            mimetype: mediaType,
+            caption: captionText
+          }, { quoted: mek });
+        }
+      }
+    });
+
+  } catch (error) {
+    console.error(error);
+    await reply("❌ Error fetching the video. Please try again later.");
+  }
+});*/
           
