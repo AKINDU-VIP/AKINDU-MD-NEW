@@ -18,7 +18,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 *╭┉┉┉┉┅┅┅══════┈┈┈┉┉┉┉*
 *╏▸* *ʀᴜɴᴛɪᴍᴇ* : ${runtime(process.uptime())}
 *╏▸* *ᴍᴏᴅᴇ* : *${config.MODE}*
-*╏▸* *ᴘʀᴇғɪx* : *${config.PREFIX]*
+*╏▸* *ᴘʀᴇғɪx* : *${config.PREFIX}*
 *╏▸* *ʀᴀᴍ ᴜsᴇ* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 *╏▸* *ᴄʀᴇᴀᴛᴏʀ* : *AKINDU MD*
 *╰━━━━∙⋆⋅⋆∙━ ─┉─ • ─┉─⊷*
