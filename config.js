@@ -22,7 +22,7 @@ module.exports = {
     PACKNAME: (process.env.PACK_INFO?.split(';') || [])[1] || '94764703165',
     AUTO_REPLY: process.env.AUTO_REPLY || "false",
     ALIVE_IMG: process.env.ALIVE_IMG || "https://i.ibb.co/nMjszVMd/SulaMd.jpg",
-    ALIVE_MSG: process.env.ALIVE_MSG || "HII DEAR IM ONLINE I'M AKINDU-MD WHATSAPP BOT 😊♻️",
+    ALIVE_MSG: process.env.ALIVE_MSG || "ʜᴇʟʟᴏ ᴛʜᴇʀᴇ ɪ'ᴍ ᴀᴋɪɴᴅᴜ ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ.ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ʙᴏᴛ ᴍᴇɴᴜ ᴛʏᴘᴇ .ᴍᴇɴᴜ ❤️",
     ANTI_LINK: process.env.ANTI_LINK || "false",
     ANTI_BAD: process.env.ANTI_BAD || "false",
     PREFIX: process.env.PREFIX || "",
