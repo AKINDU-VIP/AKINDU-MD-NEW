@@ -9,7 +9,7 @@ module.exports = {
     SESSION_ID: process.env.SESSION_ID || "yI0yjLKR#y3CtvtSwTilogZLc6cOALWRjqeStFLF1melzIz8_8KA",
     CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
     CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️‍🔥,❤️‍🩹,❤️,🩷,🧡,💛,💚,💙,🩵,💜,🤎,🖤,🩶,🤍",
-    CAPTION: process.env.CAPTION || "*AKINDU-MD*",
+    CAPTION: process.env.CAPTION || "*ᴀᴋɪɴᴅᴜ ᴍᴅ*",
     ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
     AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
     READ_MESSAGE: process.env.READ_MESSAGE || "false", // Added auto-read configuration
@@ -22,17 +22,17 @@ module.exports = {
     PACKNAME: (process.env.PACK_INFO?.split(';') || [])[1] || '94764703165',
     AUTO_REPLY: process.env.AUTO_REPLY || "false",
     ALIVE_IMG: process.env.ALIVE_IMG || "https://i.ibb.co/nMjszVMd/SulaMd.jpg",
-    ALIVE_MSG: process.env.ALIVE_MSG || "ʜᴇʟʟᴏ ᴛʜᴇʀᴇ ɪ'ᴍ ᴀᴋɪɴᴅᴜ ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ.ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ʙᴏᴛ ᴍᴇɴᴜ ᴛʏᴘᴇ .ᴍᴇɴᴜ ❤️",
+    ALIVE_MSG: process.env.ALIVE_MSG || "*ʜᴇʟʟᴏ ᴛʜᴇʀᴇ ɪ'ᴍ ᴀᴋɪɴᴅᴜ ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ.ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ʙᴏᴛ ᴍᴇɴᴜ ᴛʏᴘᴇ         .ᴍᴇɴᴜ ❤️*",
     ANTI_LINK: process.env.ANTI_LINK || "false",
     ANTI_BAD: process.env.ANTI_BAD || "false",
-    PREFIX: process.env.PREFIX || "",
+    PREFIX: process.env.PREFIX || ".",
     FAKE_RECORDING: process.env.FAKE_RECORDING || "false",
     AUTO_REACT: process.env.AUTO_REACT || "false",
     OWNER_REACT: process.env.OWNER_REACT || "false",
-    BOT_NAME: process.env.BOT_NAME || "AKINDU-MD",
+    BOT_NAME: process.env.BOT_NAME || "ᴀᴋɪɴᴅᴜ ᴍᴅ",
     ANTI_VV: process.env.ANTI_VV || "true",
     ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "log", // change it to 'same' if you want to resend deleted message in same chat
-    OWNER_NAME: process.env.OWNER_NAME || "AKINDU", //replace with your name 
+    OWNER_NAME: process.env.OWNER_NAME || "ᴀᴋɪɴᴅᴜ", //replace with your name 
     OWNER_NUMBER: process.env.OWNER_NUMBER || "94764703165",// add your bot owner number
     DEV: process.env.DEV || "94764703165", //replace with your whatsapp number
     AUTOLIKESTATUS: process.env.AUTOLIKESTATUS || "true",
