@@ -424,7 +424,7 @@ cmd({
                   'serverMessageId': 0x3e7
                 },
                 'externalAdReply': {
-                  'title': "Arslan-XMD,
+                  'title': "Arslan-XMD",
                   'body': "Arslan-MD",
                   'mediaType': 0x1,
                   'sourceUrl': _0x5ccecb.url,
