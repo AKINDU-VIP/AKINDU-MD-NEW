@@ -7,7 +7,7 @@ cmd({
   pattern: "mediafire",
   alias: ["mfire","mf"],
   desc: "To download MediaFire files.",
-  react: "🎥",
+  react: "📂",
   category: "download",
   filename: __filename
 }, async (conn, m, store, {
@@ -37,13 +37,12 @@ cmd({
     const mime_type = fileType || "application/octet-stream";
 
     await conn.sendMessage(from, {
-      react: { text: "⬆️", key: m.key }
+      react: { text: "📥", key: m.key }
     });
 
-    const caption = `*ᴍᴇᴅɪᴀꜰɪʀᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n`
-      + `┃▸ *File Name:* ${file_name}\n`
-      + `┃▸ *File Type:* ${mime_type}\n`
-      + `╰━━━⪼\n\n`
+    const caption = `*ᴀᴋɪɴᴅᴜ ᴍᴅ ᴍᴇᴅɪᴀꜰɪʀᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n`
+      + `❒ *ꜰɪʟᴇ ɴᴀᴍᴇ* ${file_name}\n`
+      + `❒ *ꜰɪʟᴇ ᴛʏᴘᴇ* ${mime_type}\n`
       + `> *ᴀᴋɪɴᴅᴜ ᴍᴅ*`;
 
     await conn.sendMessage(from, {
