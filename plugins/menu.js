@@ -12,12 +12,12 @@ cmd({
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         let desc = `
-*┃ 👋 ʜᴇʟʟᴏ ${pushname}*
-*╏▸* *ʀᴜɴᴛɪᴍᴇ* : *${runtime(process.uptime())}*
-*╏▸* *ᴍᴏᴅᴇ* : *${config.MODE}*
-*╏▸* *ᴘʀᴇғɪx* : *${config.PREFIX}*
-*╏▸* *ʀᴀᴍ ᴜsᴇ* : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
-*╏▸* *ᴄʀᴇᴀᴛᴏʀ* : *ᴀᴋɪɴᴅᴜ ᴍᴅ*
+> *┃ 👋 ʜᴇʟʟᴏ ${pushname}* \n\n
+> *❒* *ʀᴜɴᴛɪᴍᴇ* : *${runtime(process.uptime())}*
+> *❒* *ᴍᴏᴅᴇ* : *${config.MODE}*
+> *❒* *ᴘʀᴇғɪx* : *${config.PREFIX}*
+> *❒* *ʀᴀᴍ ᴜsᴇ* : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*
+> *❒* *ᴄʀᴇᴀᴛᴏʀ* : *ᴀᴋɪɴᴅᴜ ᴍᴅ*
 
 
 *╭━━┉┉━━┉┉━━┉*
@@ -93,12 +93,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 ╭─┈┄┉┅┅┅┅┅┅┅┅┅┅┅┅
 ┋ ◉ *ᴀɪ* 
-┋ ◉ *ɢᴏᴏɢʟᴇ*
-┋ ◉ *ɢᴇᴍɪɴ*
-┋ ◉ *ʟᴏʀᴅx*
+┋ ◉ *ᴅᴇᴇᴘꜱᴇᴇᴋ*
+┋ ◉ *ᴏᴘᴇɴᴀɪ*
 ╰━━━━∙⋆⋅⋆∙━ • ─┉─⊷
 
-⭓ *ᴛᴏᴛᴀʟ ᴄᴏᴍᴍᴀɴᴅs ʟɪsᴛ ᴀɪ: 4*
+⭓ *ᴛᴏᴛᴀʟ ᴄᴏᴍᴍᴀɴᴅs ʟɪsᴛ ᴀɪ: 3*
 
 > *ᴀᴋɪɴᴅᴜ ᴍᴅ*`);
                         break;
