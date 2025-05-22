@@ -10,8 +10,8 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let madeMenu = `*👋 ʜᴇʟʟᴏ ${pushname}* \n
-❒ *ᴀᴋɪɴᴅᴜ ᴍᴅ ɴᴏᴡ ᴀʟɪᴠᴇ 😇* \n *ʜᴏᴡ ᴄᴀɴ ɪ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏᴀᴅʏ* \n *ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ʙᴏᴛ ᴍᴇɴᴜ ᴛʏᴘᴇ .ᴍᴇɴᴜ 📜*
-> ᴀᴋɪɴᴅᴜ ᴍᴅ`
+❒ *ᴀᴋɪɴᴅᴜ ᴍᴅ ɴᴏᴡ ᴀʟɪᴠᴇ 😇* \n\n *ʜᴏᴡ ᴄᴀɴ ɪ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏᴀᴅʏ* \n\n *ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ʙᴏᴛ ᴍᴇɴᴜ ᴛʏᴘᴇ*\n\n  *.ᴍᴇɴᴜ 📜* \n\n
+> *ᴀᴋɪɴᴅᴜ ᴍᴅ*`
 
 await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:madeMenu},{quoted:mek})
 
