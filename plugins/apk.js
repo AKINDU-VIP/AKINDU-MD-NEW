@@ -19,7 +19,7 @@ cmd({
       return reply("❌ Please provide an app name to search.");
     }
 
-    await conn.sendMessage(from, { react: { text: "⏳", key: m.key } });
+    await conn.sendMessage(from, { react: { text: "📥", key: m.key } });
 
     const apiUrl = `http://ws75.aptoide.com/api/7/apps/search/query=${q}/limit=1`;
     const response = await axios.get(apiUrl);
@@ -32,13 +32,13 @@ cmd({
     const app = data.datalist.list[0];
     const appSize = (app.size / 1048576).toFixed(2); // Convert bytes to MB
 
-    const caption = `ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ
-┃  *Name:* ${app.name}
-┃  *Size:* ${appSize} MB
-┃  *Package:* ${app.package}
-┃  *Updated On:* ${app.updated}
-┃  *Developer:* ${app.developer.name}
-╰━━━━━━━━━━━━━━━┈⊷
+    const caption = `*ᴀᴋɪɴᴅᴜ ᴍᴅ ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ* \n
+❒ *ᴀᴘᴋ ɴᴀᴍᴇ* ${app.name}
+❒ *ᴀᴘᴋ ꜱɪᴢᴇ* ${appSize} ᴍʙ
+❒  *ᴀᴘᴋ ᴘᴀᴄᴋᴇɢᴇ* ${app.package}
+❒  *ᴜᴘᴅᴀᴛᴇᴅ ᴅᴀᴛᴇ* ${app.updated}
+❒  *ᴅᴇᴠᴇʟᴏᴘᴇʀ* ${app.developer.name}
+
 > *ᴀᴋɪɴᴅᴜ ᴍᴅ*`;
 
     await conn.sendMessage(from, { react: { text: "⬆️", key: m.key } });
