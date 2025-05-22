@@ -9,11 +9,11 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let madeMenu = `*👋 ʜᴇʟʟᴏ ${pushname}*
-ɪ'ᴍ ᴀᴋɪɴᴅᴜ ᴅɪᴍᴀɴꜱʜᴀ.
-ᴏᴡɴᴇʀ ᴏꜰ ᴀᴋɪɴᴅᴜ ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ.
-ɪ'ᴍ ꜰʀᴏᴍ ꜱʀɪ ʟᴀɴᴋᴀ.
-16 ʏᴇᴀʀꜱ ᴏʟᴅ.
+let madeMenu = `*👋 ʜᴇʟʟᴏ ${pushname}* \n
+❒ *ɪ'ᴍ ᴀᴋɪɴᴅᴜ ᴅɪᴍᴀɴꜱʜᴀ.* \n
+❒ *ᴏᴡɴᴇʀ ᴏꜰ ᴀᴋɪɴᴅᴜ ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ.* \n
+❒ *ɪ'ᴍ ꜰʀᴏᴍ ꜱʀɪ ʟᴀɴᴋᴀ.* \n
+❒ *16 ʏᴇᴀʀꜱ ᴏʟᴅ.* \n
 
 > ᴀᴋɪɴᴅᴜ ᴍᴅ`
 
