@@ -6,7 +6,7 @@ function convertToBool(text, fault = 'true') {
 }
 
 module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "yI0yjLKR#y3CtvtSwTilogZLc6cOALWRjqeStFLF1melzIz8_8KA",
+    SESSION_ID: process.env.SESSION_ID || "HEV1UZjY#-GHiJICrbc4l7baegKndaASu_FEg-dwYPrIepX7hr-8",
     CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
     CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️‍🔥,❤️‍🩹,❤️,🩷,🧡,💛,💚,💙,🩵,💜,🤎,🖤,🩶,🤍",
     CAPTION: process.env.CAPTION || "*ᴀᴋɪɴᴅᴜ ᴍᴅ*",
@@ -18,10 +18,10 @@ module.exports = {
     MODE: process.env.MODE || "public",
     AUTO_VOICE: process.env.AUTO_VOICE || "false",
     AUTO_STICKER: process.env.AUTO_STICKER || "false",
-    AUTHOR: (process.env.PACK_INFO?.split(';') || [])[0] || 'AKINDU-MD',
+    AUTHOR: (process.env.PACK_INFO?.split(';') || [])[0] || 'ᴀᴋɪɴᴅᴜ ᴍᴅ',
     PACKNAME: (process.env.PACK_INFO?.split(';') || [])[1] || '94764703165',
     AUTO_REPLY: process.env.AUTO_REPLY || "false",
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://i.ibb.co/nMjszVMd/SulaMd.jpg",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/wqp3y9.jpg",
     ALIVE_MSG: process.env.ALIVE_MSG || "*ʜᴇʟʟᴏ ᴛʜᴇʀᴇ ɪ'ᴍ ᴀᴋɪɴᴅᴜ ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ.ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ʙᴏᴛ ᴍᴇɴᴜ ᴛʏᴘᴇ         .ᴍᴇɴᴜ ❤️*",
     ANTI_LINK: process.env.ANTI_LINK || "false",
     ANTI_BAD: process.env.ANTI_BAD || "false",
