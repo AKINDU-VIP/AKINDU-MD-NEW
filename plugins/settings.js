@@ -13,61 +13,37 @@ cmd({
     alias: ["setting", "allvar"],
     desc: "Settings of bot",
     category: "menu",
-    react: "⤵️",
+    react: "⚙️",
     filename: __filename
 }, 
 async (conn, mek, m, { from, quoted, reply }) => {
     try {
         // Define the settings message with the correct boolean checks
-        let envSettings = `*ʙᴏᴛ ᴇɴᴀʙʟᴇᴅ ꜱᴇᴛᴛɪɴɢꜱ*
-╭━━〔 *Enabled Disabled* 〕━━┈⊷
-┇๏ *Auto Read Status:* ${isEnabled(config.AUTO_READ_STATUS) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Status Reply:* ${isEnabled(config.AUTO_STATUS_REPLY) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Reply:* ${isEnabled(config.AUTO_REPLY) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Sticker:* ${isEnabled(config.AUTO_STICKER) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Voice:* ${isEnabled(config.AUTO_VOICE) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Owner React:* ${isEnabled(config.OWNER_REACT) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Heart React:* ${isEnabled(config.HEART_REACT) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto React:* ${isEnabled(config.AUTO_REACT) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Anti-Link:* ${isEnabled(config.ANTI_LINK) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Anti-Bad Words:* ${isEnabled(config.ANTI_BAD) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Typing:* ${isEnabled(config.AUTO_TYPING) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Recording:* ${isEnabled(config.FAKE_RECORDING) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Always Online:* ${isEnabled(config.ALWAYS_ONLINE) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Currently Status:* ${isEnabled(config.CURRENT_STATUS) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Read Message:* ${isEnabled(config.READ_MESSAGE) ? "Enabled ✅" : "Disabled ❌"}
-╰━━━━━━━━━━━━──┈⊷
-> ${config.CAPTION}`;
+        let envSettings = `*ʙᴏᴛ ꜱᴇᴛᴛɪɴɢꜱ* \n\n
+❒ *ᴀᴜᴛᴏ ʀᴇᴀᴅ ꜱᴛᴀᴛᴜꜱ* ${isEnabled(config.AUTO_READ_STATUS) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀᴜᴛᴏ ꜱᴛᴀᴛᴜꜱ ʀᴇᴘʟʏ* ${isEnabled(config.AUTO_STATUS_REPLY) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀᴜᴛᴏ ʀᴇᴘʟʏ* ${isEnabled(config.AUTO_REPLY) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀᴜᴛᴏ ꜱᴛɪᴄᴋᴇʀ* ${isEnabled(config.AUTO_STICKER) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀᴜᴛᴏ ᴠᴏɪᴄᴇ* ${isEnabled(config.AUTO_VOICE) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴏᴡɴᴇʀ ʀᴇᴀᴄᴛ* ${isEnabled(config.OWNER_REACT) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ʜᴇᴀʀᴛ ʀᴇᴀᴄᴛ* ${isEnabled(config.HEART_REACT) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀᴜᴛᴏ ʀᴇᴀᴄᴛ* ${isEnabled(config.AUTO_REACT) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀɴᴛɪ ʟɪɴᴋ* ${isEnabled(config.ANTI_LINK) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀɴᴛɪ ʙᴀᴅ ᴡᴏʀᴅꜱ* ${isEnabled(config.ANTI_BAD) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀᴜᴛᴏ ᴛʏᴘɪɴɢ* ${isEnabled(config.AUTO_TYPING) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀᴜᴛᴏ ʀᴇᴄᴏʀᴅɪɴɢ* ${isEnabled(config.FAKE_RECORDING) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀʟʟᴡᴀʏꜱ ᴏɴʟɪɴᴇ* ${isEnabled(config.ALWAYS_ONLINE) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ᴀᴜᴛᴏ ꜱᴛᴀᴛᴜꜱ ꜱᴇᴇɴ* ${isEnabled(config.CURRENT_STATUS) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
+❒ *ʀᴇᴀᴅ ᴍᴀꜱꜱᴇɢᴇ* ${isEnabled(config.READ_MESSAGE) ? "ᴇɴᴀʙʟᴇᴅ ✅" : "ᴅɪꜱᴀʙʟᴇᴅ ❌"}
 
-        // Send message with an image
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: 'https://github.com/Awais-star-a11y/TESTING-REPO/raw/refs/heads/main/IMG-20250409-WA0093.jpg' }, // Image URL
-                caption: envSettings,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363369260614615@newsletter',
-                        newsletterName: "AWAIS MD",
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
+> *ᴀᴋɪɴᴅᴜ ᴍᴅ*`
 
-        // Send an audio file
-        await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/Awais-star-a11y/TESTING-REPO/raw/refs/heads/main/VID-20250118-WA0022.mp3' }, // Audio URL
-            mimetype: 'audio/mp4',
-            ptt: true
-        }, { quoted: mek });
+await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:`${status}`},{quoted:mek})
 
-    } catch (error) {
-        console.log(error);
-        reply(`Error: ${error.message}`);
-    }
-});
+}catch(e){
+console.log(e)
+reply(`${e}`)
+}
+})
+
+
