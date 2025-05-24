@@ -208,7 +208,6 @@ cmd({
             }, { quoted: receivedMessage });
             break;
         }
-      }
     });
 
   
