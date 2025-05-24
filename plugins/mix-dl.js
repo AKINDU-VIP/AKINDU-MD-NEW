@@ -103,9 +103,6 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
 });
 
 
-const { cmd, commands } = require('../command');
-const { fetchJson } = require('../functions');
-
 cmd({
   pattern: "tiktok",
   alias: ['tt', 'ttdown'],
