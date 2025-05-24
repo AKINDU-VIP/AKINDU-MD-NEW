@@ -1,7 +1,7 @@
 
 
-const { cmd, commands } = require('../command');
-const { fetchJson } = require('../functions');
+const { cmd } = require('../command');
+const axios = require('axios');
 
 cmd({
   pattern: "tiktok",
