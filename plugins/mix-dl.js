@@ -208,6 +208,6 @@ cmd({
             }, { quoted: receivedMessage });
             break;
         }
-    });
+    };
 
   
